@@ -1,0 +1,87 @@
+.kanban-card {
+    width: 100%;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    border: hsla(213, 8%, 79%, 0.432) 1px solid;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  /* Header with images */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .header-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+  }
+  
+  /* Info section */
+  .info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: #656D76;
+  }
+  
+  .info .title {
+    color: #656D76;
+  }
+  
+  .info .bulletpoint {
+    color: #656D76;
+  }
+  
+  /* Item text */
+  .item {
+    font-size: 1.1rem;
+    font-weight: 600;
+    min-height: 3rem;
+    max-height: 3rem; /* Restricts the height */
+    line-height: 1.5rem; /* Adjusts spacing between lines */
+    color: black;
+    overflow: hidden; /* Hides overflowing content */
+    text-overflow: ellipsis; /* Adds '...' to truncated text */
+    display: -webkit-box; /* Enables truncation for multiline text */
+    -webkit-line-clamp: 2; /* Number of lines to display before truncation */
+    line-clamp: 2; 
+    -webkit-box-orient: vertical; /* Specifies vertical orientation for the box */
+  }
+  
+  /* Actions */
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .action-button {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.7rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .action-button.download {
+    border: 1px solid #C6CACE;
+    color: #656D76;
+  }
+  
+
+  .action-button.view {
+    border: 1px solid #793BF2;
+    color: #793BF2;
+    background-color: #F7F2FF;
+  }
