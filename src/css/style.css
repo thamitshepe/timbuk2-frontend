@@ -85,24 +85,36 @@ a {
   flex-grow: 1; /* Pushes the bottom section down */
 }
 
+/* General styling for menu group */
 .menu-group {
-  margin-top: 18px;
+  padding-top: 8px;
   padding: 20px;
   border-radius: 12px;
-  background-color: #F7F2FF;
   position: relative; /* Needed to position the pseudo-element */
 }
 
-.menu-group1 {
-  padding: 20px;
-  padding-top: 8px;
-  border-radius: 12px;
-  align-items: center;
-  position: relative; /* Needed to position the pseudo-element */
+/* Styling for the selected menu group item */
+.menu-group.selected {
+  background-color: #F7F2FF;
+}
+
+/* Add the left vertical bar when selected */
+.menu-group.selected::before {
+  content: "";
+  width: 5px;
+  height: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #793BF2; /* Purple background for the left bar */
+  position: absolute;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  left: 0;
+  transition: all 0.2s;
 }
 
 .card {
-  max-width: 320px;
+  min-width: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -186,20 +198,6 @@ a {
 
 
 
-.menu-group::before {
-  content: "";
-  width: 5px;
-  height: 50%;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #793BF2;
-  position: absolute;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  left: 0;
-  transition: all 0.2s;
-}
-
 .input {
   width: 100%;
   height: 58px;
@@ -227,6 +225,10 @@ a {
 
 .input:active {
   transform: scale(0.95);
+}
+
+.search {
+  margin-bottom: 1.2rem;
 }
 
 .search-icon {

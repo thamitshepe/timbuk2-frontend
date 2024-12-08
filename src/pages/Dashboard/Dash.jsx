@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import DefaultLayout from '../../layout/DefaultLayout';
 import Card from "../../components/Card";
 import "./Kanban.css";
 
 const Dash = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate a 3-second loading skeleton on page load
+    const timeout = setTimeout(() => setLoading(false), 3000);
+    return () => clearTimeout(timeout);
+  }, []);
 
   const cardsData = [
     { infoText: "Info 1", itemText: "Item 1", isFavourite: false },
@@ -26,6 +33,7 @@ const Dash = () => {
             infoText={card.infoText}
             itemText={card.itemText}
             isFavourite={card.isFavourite}
+            isLoading={loading} // Pass loading state to each card
           />
         ))}
       </div>
