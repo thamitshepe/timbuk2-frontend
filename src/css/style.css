@@ -20,7 +20,7 @@ body {
 
 @media screen and (max-device-width: 850px) {
   html, body {
-    zoom: 0.7;
+    zoom: 0.5;
   }
 }
 
